@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6Gh-1t-JwE">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <scenes>
+        <!--Education Graph View Controller-->
+        <scene sceneID="xDt-po-ZJk">
+            <objects>
+                <viewController id="vAb-C0-YLp" customClass="EducationGraphViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="f39-hN-Mdc"/>
+                        <viewControllerLayoutGuide type="bottom" id="s6O-n4-r37"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HR2-va-yZK">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sdf-25-pbJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4215.75" y="472.5"/>
+        </scene>
+        <!--Education View Controller-->
+        <scene sceneID="TfH-07-gWc">
+            <objects>
+                <viewController storyboardIdentifier="eduVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YnS-aG-YNX" customClass="EducationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eRK-a2-92W"/>
+                        <viewControllerLayoutGuide type="bottom" id="ghv-UI-m6u"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="o9P-xX-gtl">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Oh-Mn-SQy">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <size key="titleShadowOffset" width="2.2250738585072014e-308" height="0.0"/>
+                                <state key="normal">
+                                    <string key="title">Доля пользователей Интернетом</string>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="76" width="375" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="firstButtonTapped:" destination="YnS-aG-YNX" eventType="touchUpInside" id="TIr-DS-INe"/>
+                                    <segue destination="vAb-C0-YLp" kind="presentation" id="3hM-fH-fBW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQu-gV-7C4">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Выпущено в отчетном году учащихся из ВУЗов"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="125" width="375" height="43"/>
+                                </variation>
+                                <connections>
+                                    <action selector="secondButtonTapped:" destination="YnS-aG-YNX" eventType="touchUpInside" id="rDf-hJ-Awx"/>
+                                    <segue destination="vAb-C0-YLp" kind="presentation" id="bhd-K8-6K2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r9y-jO-Ep8">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Количество научных библиотек"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="176" width="375" height="75"/>
+                                </variation>
+                                <connections>
+                                    <action selector="thirdButtonTapped:" destination="YnS-aG-YNX" eventType="touchUpInside" id="PWv-df-bHb"/>
+                                    <segue destination="vAb-C0-YLp" kind="presentation" id="dnC-2z-rhC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Aj-59-OfA">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Принято в отчетном году учащихся ВУЗов"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="259" width="375" height="46"/>
+                                </variation>
+                                <connections>
+                                    <action selector="fourthButtonTapped:" destination="YnS-aG-YNX" eventType="touchUpInside" id="XYm-Vr-pg0"/>
+                                    <segue destination="vAb-C0-YLp" kind="presentation" id="xdc-W9-OwF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="WAb-Yc-Ury">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Число организаций, осуществляющих подготовку докторантов"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="313" width="375" height="64"/>
+                                </variation>
+                                <connections>
+                                    <action selector="fifthButtonTapped:" destination="YnS-aG-YNX" eventType="touchUpInside" id="OkL-R9-pc5"/>
+                                    <segue destination="vAb-C0-YLp" kind="presentation" id="ann-11-ZZU"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Образование" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eD2-Tr-uHi">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="70" y="34" width="235" height="34"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="5Oh-Mn-SQy"/>
+                                <exclude reference="cQu-gV-7C4"/>
+                                <exclude reference="r9y-jO-Ep8"/>
+                                <exclude reference="2Aj-59-OfA"/>
+                                <exclude reference="WAb-Yc-Ury"/>
+                                <exclude reference="eD2-Tr-uHi"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="5Oh-Mn-SQy"/>
+                                <include reference="cQu-gV-7C4"/>
+                                <include reference="r9y-jO-Ep8"/>
+                                <include reference="2Aj-59-OfA"/>
+                                <include reference="WAb-Yc-Ury"/>
+                                <include reference="eD2-Tr-uHi"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dfu-S7-5bc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3507.75" y="479.5"/>
+        </scene>
+        <!--Ecology View Controller-->
+        <scene sceneID="xar-ce-LTn">
+            <objects>
+                <viewController storyboardIdentifier="ecologyVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="s1I-yo-HxJ" customClass="EcologyViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GbQ-Jr-77u"/>
+                        <viewControllerLayoutGuide type="bottom" id="Zew-CB-tCh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Hfs-nT-P71">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tGS-6O-vLn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2811" y="480"/>
+        </scene>
+        <!--Economics View Controller-->
+        <scene sceneID="FhP-b8-bA8">
+            <objects>
+                <viewController storyboardIdentifier="economicsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VyM-UA-ySG" customClass="EconomicsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6FC-2k-LU6"/>
+                        <viewControllerLayoutGuide type="bottom" id="GK1-Vv-piR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dgo-81-QKR">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tGI-Bg-yJY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2043" y="480"/>
+        </scene>
+        <!--Security View Controller-->
+        <scene sceneID="JNU-ND-OI3">
+            <objects>
+                <viewController storyboardIdentifier="secVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OQJ-WJ-5CX" customClass="SecurityViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BbS-7q-az3"/>
+                        <viewControllerLayoutGuide type="bottom" id="Lew-x4-fIZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="998-fr-cRS">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I4l-Nr-ock" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2811" y="1196"/>
+        </scene>
+        <!--Population View Controller-->
+        <scene sceneID="uas-mh-WdL">
+            <objects>
+                <viewController storyboardIdentifier="popVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="641-ju-Evl" customClass="PopulationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jFW-XV-PB2"/>
+                        <viewControllerLayoutGuide type="bottom" id="daX-Tj-P6H"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eEa-T9-bDw">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mib-MC-8Qu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2043" y="1196"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="graphsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-600.75" y="379.5"/>
+        </scene>
+        <!--View Controller Paralax-->
+        <scene sceneID="06Y-v3-02C">
+            <objects>
+                <viewController storyboardIdentifier="parVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6Gh-1t-JwE" customClass="ViewControllerParalax" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lEF-mw-QFK"/>
+                        <viewControllerLayoutGuide type="bottom" id="rYy-ZR-zRe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AOJ-kT-fbW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7nJ-DE-VdP">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="r7e-sM-iHi">
+                                    <size key="itemSize" width="373" height="170"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MJCell" id="jEW-uR-tty" customClass="MJCollectionViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="373" height="170"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="6Gh-1t-JwE" id="CTz-hz-XFI"/>
+                                    <outlet property="delegate" destination="6Gh-1t-JwE" id="9d3-5U-DgR"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="7nJ-DE-VdP"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="7nJ-DE-VdP"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="parallaxCollectionView" destination="7nJ-DE-VdP" id="hV7-Zd-Ujx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1a5-Pc-Gok" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2.25" y="379.5"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="3hM-fH-fBW"/>
+    </inferredMetricsTieBreakers>
+</document>
