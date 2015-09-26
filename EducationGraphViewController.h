@@ -9,6 +9,10 @@
 @import UIKit;
 #import <Charts/Charts.h>
 
-@interface EducationGraphViewController : UIViewController
+@interface EducationGraphViewController : UIViewController{
+
+}
+
+- (IBAction)saveSnapshot:(id)sender;
 
 @end

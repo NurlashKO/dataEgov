@@ -7,14 +7,39 @@
         <!--Education Graph View Controller-->
         <scene sceneID="xDt-po-ZJk">
             <objects>
-                <viewController id="vAb-C0-YLp" customClass="EducationGraphViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="graphShowView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vAb-C0-YLp" customClass="EducationGraphViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="f39-hN-Mdc"/>
                         <viewControllerLayoutGuide type="bottom" id="s6O-n4-r37"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="HR2-va-yZK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHx-DP-CW9">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Save snapshot">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="637" width="375" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="saveSnapshot:" destination="vAb-C0-YLp" eventType="touchUpInside" id="NTh-Ms-rVf"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="kHx-DP-CW9"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="kHx-DP-CW9"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
@@ -31,103 +56,146 @@
                         <viewControllerLayoutGuide type="bottom" id="ghv-UI-m6u"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="o9P-xX-gtl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Oh-Mn-SQy">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <size key="titleShadowOffset" width="2.2250738585072014e-308" height="0.0"/>
-                                <state key="normal">
-                                    <string key="title">Доля пользователей Интернетом</string>
-                                </state>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baiterek.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="e4P-wy-E8x">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="76" width="375" height="30"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 </variation>
-                                <connections>
-                                    <action selector="firstButtonTapped:" destination="YnS-aG-YNX" eventType="touchUpInside" id="TIr-DS-INe"/>
-                                    <segue destination="vAb-C0-YLp" kind="presentation" id="3hM-fH-fBW"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQu-gV-7C4">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Выпущено в отчетном году учащихся из ВУЗов"/>
+                            </imageView>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="elK-TH-kjh">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Oh-Mn-SQy">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                        <size key="titleShadowOffset" width="2.2250738585072014e-308" height="0.0"/>
+                                        <state key="normal">
+                                            <string key="title">Доля пользователей Интернетом
+</string>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="203" width="375" height="41"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="firstButtonTapped:" destination="YnS-aG-YNX" eventType="touchUpInside" id="TIr-DS-INe"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="cQu-gV-7C4">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                        <state key="normal" title="Выпущено в отчетном году учащихся из ВУЗов">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="252" width="375" height="43"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="secondButtonTapped:" destination="YnS-aG-YNX" eventType="touchUpInside" id="rDf-hJ-Awx"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r9y-jO-Ep8">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                        <state key="normal" title="Количество научных библиотек">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="303" width="375" height="56"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="thirdButtonTapped:" destination="YnS-aG-YNX" eventType="touchUpInside" id="PWv-df-bHb"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Aj-59-OfA">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                        <state key="normal" title="Принято в отчетном году учащихся ВУЗов">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="367" width="375" height="46"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="fourthButtonTapped:" destination="YnS-aG-YNX" eventType="touchUpInside" id="XYm-Vr-pg0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="WAb-Yc-Ury">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                        <state key="normal" title="Число организаций, осуществляющих подготовку докторантов">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="421" width="375" height="64"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="fifthButtonTapped:" destination="YnS-aG-YNX" eventType="touchUpInside" id="OkL-R9-pc5"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Образование" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eD2-Tr-uHi">
+                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="28"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="70" y="79" width="235" height="34"/>
+                                        </variation>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="5Oh-Mn-SQy"/>
+                                        <exclude reference="cQu-gV-7C4"/>
+                                        <exclude reference="r9y-jO-Ep8"/>
+                                        <exclude reference="2Aj-59-OfA"/>
+                                        <exclude reference="WAb-Yc-Ury"/>
+                                        <exclude reference="eD2-Tr-uHi"/>
+                                    </mask>
+                                </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="125" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <mask key="subviews">
+                                        <include reference="5Oh-Mn-SQy"/>
+                                        <include reference="cQu-gV-7C4"/>
+                                        <include reference="r9y-jO-Ep8"/>
+                                        <include reference="2Aj-59-OfA"/>
+                                        <include reference="WAb-Yc-Ury"/>
+                                        <include reference="eD2-Tr-uHi"/>
+                                    </mask>
                                 </variation>
-                                <connections>
-                                    <action selector="secondButtonTapped:" destination="YnS-aG-YNX" eventType="touchUpInside" id="rDf-hJ-Awx"/>
-                                    <segue destination="vAb-C0-YLp" kind="presentation" id="bhd-K8-6K2"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r9y-jO-Ep8">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Количество научных библиотек"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="176" width="375" height="75"/>
-                                </variation>
-                                <connections>
-                                    <action selector="thirdButtonTapped:" destination="YnS-aG-YNX" eventType="touchUpInside" id="PWv-df-bHb"/>
-                                    <segue destination="vAb-C0-YLp" kind="presentation" id="dnC-2z-rhC"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Aj-59-OfA">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Принято в отчетном году учащихся ВУЗов"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="259" width="375" height="46"/>
-                                </variation>
-                                <connections>
-                                    <action selector="fourthButtonTapped:" destination="YnS-aG-YNX" eventType="touchUpInside" id="XYm-Vr-pg0"/>
-                                    <segue destination="vAb-C0-YLp" kind="presentation" id="xdc-W9-OwF"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="WAb-Yc-Ury">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Число организаций, осуществляющих подготовку докторантов"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="313" width="375" height="64"/>
-                                </variation>
-                                <connections>
-                                    <action selector="fifthButtonTapped:" destination="YnS-aG-YNX" eventType="touchUpInside" id="OkL-R9-pc5"/>
-                                    <segue destination="vAb-C0-YLp" kind="presentation" id="ann-11-ZZU"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Образование" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eD2-Tr-uHi">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="70" y="34" width="235" height="34"/>
-                                </variation>
-                            </label>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="5Oh-Mn-SQy"/>
-                                <exclude reference="cQu-gV-7C4"/>
-                                <exclude reference="r9y-jO-Ep8"/>
-                                <exclude reference="2Aj-59-OfA"/>
-                                <exclude reference="WAb-Yc-Ury"/>
-                                <exclude reference="eD2-Tr-uHi"/>
+                                <exclude reference="e4P-wy-E8x"/>
+                                <exclude reference="elK-TH-kjh"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="5Oh-Mn-SQy"/>
-                                <include reference="cQu-gV-7C4"/>
-                                <include reference="r9y-jO-Ep8"/>
-                                <include reference="2Aj-59-OfA"/>
-                                <include reference="WAb-Yc-Ury"/>
-                                <include reference="eD2-Tr-uHi"/>
+                                <include reference="e4P-wy-E8x"/>
+                                <include reference="elK-TH-kjh"/>
                             </mask>
                         </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="firstButton" destination="5Oh-Mn-SQy" id="GsJ-oX-ZrP"/>
+                        <outlet property="fivthButton" destination="WAb-Yc-Ury" id="Dj2-Xd-aBk"/>
+                        <outlet property="fourthButton" destination="2Aj-59-OfA" id="k78-e1-mwa"/>
+                        <outlet property="secondButton" destination="cQu-gV-7C4" id="kZ5-He-RYw"/>
+                        <outlet property="thirdButton" destination="r9y-jO-Ep8" id="kWh-bK-7vx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dfu-S7-5bc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3507.75" y="479.5"/>
+            <point key="canvasLocation" x="-3557.25" y="472.5"/>
         </scene>
         <!--Ecology View Controller-->
         <scene sceneID="xar-ce-LTn">
@@ -138,14 +206,143 @@
                         <viewControllerLayoutGuide type="bottom" id="Zew-CB-tCh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Hfs-nT-P71">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tasImage.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ldE-UB-bQo">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                </variation>
+                            </imageView>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yf6-0X-669">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Экология" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Rh-Gu-Mhe">
+                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="28"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="85" width="375" height="34"/>
+                                        </variation>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xv5-3Q-LHW">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <state key="normal" title="Утечка и неучтенный расход воды">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="202" width="375" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="fbt:" destination="s1I-yo-HxJ" eventType="touchUpInside" id="gDA-gg-Jec"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="eSc-qr-cYv">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <state key="normal" title="Объем выбросов загрязняющих веществ в атмосферу по предприятиям, увеличившим выбросы загрязняющих веществ">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="246" width="375" height="65"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="sbt:" destination="s1I-yo-HxJ" eventType="touchUpInside" id="VIg-2n-8Z2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUG-fO-aaJ">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <state key="normal" title="Отпущено воды потребителям">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="404" width="375" height="38"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="fourthbt:" destination="s1I-yo-HxJ" eventType="touchUpInside" id="uKZ-jH-5Nd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00z-Io-ngB">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <state key="normal" title="Отпущено тепловой энергии потребителям">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="468" width="375" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="fifthBt:" destination="s1I-yo-HxJ" eventType="touchUpInside" id="FP7-cL-uAi"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="RbN-wJ-gKZ">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <state key="normal" title="Количество организованных стационарных источников выбросов загрязняющих веществ">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="4" y="330" width="367" height="54"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="tbt:" destination="s1I-yo-HxJ" eventType="touchUpInside" id="Mq4-eQ-Qgh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="8Rh-Gu-Mhe"/>
+                                        <exclude reference="xv5-3Q-LHW"/>
+                                        <exclude reference="eSc-qr-cYv"/>
+                                        <exclude reference="cUG-fO-aaJ"/>
+                                        <exclude reference="00z-Io-ngB"/>
+                                        <exclude reference="RbN-wJ-gKZ"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <mask key="subviews">
+                                        <include reference="8Rh-Gu-Mhe"/>
+                                        <include reference="xv5-3Q-LHW"/>
+                                        <include reference="eSc-qr-cYv"/>
+                                        <include reference="cUG-fO-aaJ"/>
+                                        <include reference="00z-Io-ngB"/>
+                                        <include reference="RbN-wJ-gKZ"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="ldE-UB-bQo"/>
+                                <exclude reference="yf6-0X-669"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="ldE-UB-bQo"/>
+                                <include reference="yf6-0X-669"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="fb" destination="xv5-3Q-LHW" id="xY1-zB-LOB"/>
+                        <outlet property="firthb" destination="00z-Io-ngB" id="Spr-YF-LOs"/>
+                        <outlet property="fourthb" destination="cUG-fO-aaJ" id="zyw-he-hHu"/>
+                        <outlet property="sb" destination="eSc-qr-cYv" id="69B-lt-KEI"/>
+                        <outlet property="tb" destination="RbN-wJ-gKZ" id="rRc-VP-bq1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tGS-6O-vLn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2811" y="480"/>
+            <point key="canvasLocation" x="-2918.25" y="472.5"/>
         </scene>
         <!--Economics View Controller-->
         <scene sceneID="FhP-b8-bA8">
@@ -156,14 +353,143 @@
                         <viewControllerLayoutGuide type="bottom" id="GK1-Vv-piR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="dgo-81-QKR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="parkImage.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ggN-i7-x1b">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                </variation>
+                            </imageView>
+                            <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JoW-Oy-myq">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Экономика" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PaG-f1-HbS">
+                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="28"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="85" width="375" height="45"/>
+                                        </variation>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XEg-nd-G15">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <state key="normal" title="Чистые налоги на продукты ">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="204" width="375" height="29"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="fbt:" destination="VyM-UA-ySG" eventType="touchUpInside" id="Pge-Q7-Mgx"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Kur-5H-aeA">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <state key="normal" title="Стоимость рабочей силы в расчете на 1 час отработанный работником ">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="249" width="375" height="55"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="sbt:" destination="VyM-UA-ySG" eventType="touchUpInside" id="ava-FY-oYH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jSB-oD-xCX">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <state key="normal" title="Глубина бедности">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="312" width="375" height="38"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="tbt:" destination="VyM-UA-ySG" eventType="touchUpInside" id="wR1-0F-JDG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Myf-nY-hJo">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <state key="normal" title="Денежные расходы населения на платные услуги, в среднем на душу населения">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="359" width="375" height="52"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="fourbt:" destination="VyM-UA-ySG" eventType="touchUpInside" id="FBn-hP-ctx"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="PdY-5a-px7">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <state key="normal" title="Денежные расходы населения на продовольственные товары, в среднем на душу населения">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="425" width="375" height="70"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="fifthbt:" destination="VyM-UA-ySG" eventType="touchUpInside" id="p7N-wN-f0F"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="PaG-f1-HbS"/>
+                                        <exclude reference="XEg-nd-G15"/>
+                                        <exclude reference="Kur-5H-aeA"/>
+                                        <exclude reference="jSB-oD-xCX"/>
+                                        <exclude reference="Myf-nY-hJo"/>
+                                        <exclude reference="PdY-5a-px7"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <mask key="subviews">
+                                        <include reference="PaG-f1-HbS"/>
+                                        <include reference="XEg-nd-G15"/>
+                                        <include reference="Kur-5H-aeA"/>
+                                        <include reference="jSB-oD-xCX"/>
+                                        <include reference="Myf-nY-hJo"/>
+                                        <include reference="PdY-5a-px7"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="ggN-i7-x1b"/>
+                                <exclude reference="JoW-Oy-myq"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="ggN-i7-x1b"/>
+                                <include reference="JoW-Oy-myq"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="fb" destination="XEg-nd-G15" id="rNK-gz-FfC"/>
+                        <outlet property="fifthb" destination="PdY-5a-px7" id="JfA-MM-fbv"/>
+                        <outlet property="fourthb" destination="Myf-nY-hJo" id="6SM-MK-IDi"/>
+                        <outlet property="sb" destination="Kur-5H-aeA" id="kiW-ox-RKR"/>
+                        <outlet property="tb" destination="jSB-oD-xCX" id="8h5-7T-tqO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tGI-Bg-yJY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2043" y="480"/>
+            <point key="canvasLocation" x="-2327.25" y="472.5"/>
         </scene>
         <!--Security View Controller-->
         <scene sceneID="JNU-ND-OI3">
@@ -174,14 +500,143 @@
                         <viewControllerLayoutGuide type="bottom" id="Lew-x4-fIZ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="998-fr-cRS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image012.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="BGq-ZE-oKv">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                </variation>
+                            </imageView>
+                            <view alpha="0.55000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fp1-jr-fEk">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Производство" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OUw-Ki-AwF">
+                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="28"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="75" width="375" height="57"/>
+                                        </variation>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0rG-Tq-1fC">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Чистые налоги на продукты">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="288" width="375" height="27"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="sbt:" destination="OQJ-WJ-5CX" eventType="touchUpInside" id="YPK-f4-fBy"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="26e-TK-bAh">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Валовой выпуск продукции (услуг) сельского хозяйства">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="333" width="375" height="47"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="tbt:" destination="OQJ-WJ-5CX" eventType="touchUpInside" id="Nx2-n8-0Jh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="XbR-nO-UJM">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Потребление основных продуктов питания населением с доходами выше величины прожиточного минимума">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="394" width="375" height="59"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="fourthbt:" destination="OQJ-WJ-5CX" eventType="touchUpInside" id="r46-sS-M7v"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="W9P-ES-MuG">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Потребление основных продуктов питания населением">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="485" width="375" height="42"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="fifthBt:" destination="OQJ-WJ-5CX" eventType="touchUpInside" id="zCg-AH-0Qq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="wJg-4V-MHh">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Валовой внутренний продукт методом производства на душу населения">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="222" width="375" height="48"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="fbt:" destination="OQJ-WJ-5CX" eventType="touchUpInside" id="gbU-NP-8mZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="OUw-Ki-AwF"/>
+                                        <exclude reference="0rG-Tq-1fC"/>
+                                        <exclude reference="26e-TK-bAh"/>
+                                        <exclude reference="XbR-nO-UJM"/>
+                                        <exclude reference="W9P-ES-MuG"/>
+                                        <exclude reference="wJg-4V-MHh"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <mask key="subviews">
+                                        <include reference="OUw-Ki-AwF"/>
+                                        <include reference="0rG-Tq-1fC"/>
+                                        <include reference="26e-TK-bAh"/>
+                                        <include reference="XbR-nO-UJM"/>
+                                        <include reference="W9P-ES-MuG"/>
+                                        <include reference="wJg-4V-MHh"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="BGq-ZE-oKv"/>
+                                <exclude reference="Fp1-jr-fEk"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="BGq-ZE-oKv"/>
+                                <include reference="Fp1-jr-fEk"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="fb" destination="wJg-4V-MHh" id="10S-MC-q1i"/>
+                        <outlet property="firthb" destination="W9P-ES-MuG" id="CVb-b8-1a1"/>
+                        <outlet property="fourthb" destination="XbR-nO-UJM" id="ydX-1E-qkW"/>
+                        <outlet property="sb" destination="0rG-Tq-1fC" id="Ent-lm-csS"/>
+                        <outlet property="tb" destination="26e-TK-bAh" id="943-Yd-vHU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I4l-Nr-ock" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2811" y="1196"/>
+            <point key="canvasLocation" x="-2811.75" y="1195.5"/>
         </scene>
         <!--Population View Controller-->
         <scene sceneID="uas-mh-WdL">
@@ -192,14 +647,159 @@
                         <viewControllerLayoutGuide type="bottom" id="daX-Tj-P6H"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="eEa-T9-bDw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="urtaImage.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="UXl-kd-lEg">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                </variation>
+                            </imageView>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VQa-kM-rNr">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RMx-c4-5SG">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                        <state key="normal" title="Прирост населения">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="201" width="375" height="33"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="fbt:" destination="641-ju-Evl" eventType="touchUpInside" id="T4s-jn-f58"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1jF-vs-qxe">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Уровень безработицы">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="248" width="375" height="42"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="sbt:" destination="641-ju-Evl" eventType="touchUpInside" id="LD9-MW-uWm"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="lhV-t3-Ee7">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Доля населения, имеющего доходы ниже стоимости продовольственной корзины">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="341" width="375" height="63"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="fourthbt:" destination="641-ju-Evl" eventType="touchUpInside" id="ChL-1k-53M"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFY-Jo-XR8">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                        <state key="normal" title="Миграция с другими странами-выбытие">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="412" width="375" height="43"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="fifthBt:" destination="641-ju-Evl" eventType="touchUpInside" id="CKH-8a-dV9"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOb-bB-9gg">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                        <state key="normal" title="Миграция с другими странами-прибытие">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="472" width="375" height="39"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="sixbt:" destination="641-ju-Evl" eventType="touchUpInside" id="2hg-Cn-OgX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Yq-km-ECF">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                        <state key="normal" title="Средний возраст населения">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="303" width="375" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="tbt:" destination="641-ju-Evl" eventType="touchUpInside" id="RC3-B2-fju"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Демография" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WzF-hJ-STa">
+                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="60" width="375" height="55"/>
+                                        </variation>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="RMx-c4-5SG"/>
+                                        <exclude reference="1jF-vs-qxe"/>
+                                        <exclude reference="lhV-t3-Ee7"/>
+                                        <exclude reference="oFY-Jo-XR8"/>
+                                        <exclude reference="hOb-bB-9gg"/>
+                                        <exclude reference="8Yq-km-ECF"/>
+                                        <exclude reference="WzF-hJ-STa"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <mask key="subviews">
+                                        <include reference="RMx-c4-5SG"/>
+                                        <include reference="1jF-vs-qxe"/>
+                                        <include reference="lhV-t3-Ee7"/>
+                                        <include reference="oFY-Jo-XR8"/>
+                                        <include reference="hOb-bB-9gg"/>
+                                        <include reference="8Yq-km-ECF"/>
+                                        <include reference="WzF-hJ-STa"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="UXl-kd-lEg"/>
+                                <exclude reference="VQa-kM-rNr"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="UXl-kd-lEg"/>
+                                <include reference="VQa-kM-rNr"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="fb" destination="RMx-c4-5SG" id="T3p-iQ-LH3"/>
+                        <outlet property="firthb" destination="oFY-Jo-XR8" id="Y4e-PU-OBs"/>
+                        <outlet property="fourthb" destination="lhV-t3-Ee7" id="6Sc-rv-Ubp"/>
+                        <outlet property="sb" destination="1jF-vs-qxe" id="Tqq-Q8-FDD"/>
+                        <outlet property="sixb" destination="hOb-bB-9gg" id="ryq-Bb-qSX"/>
+                        <outlet property="tb" destination="8Yq-km-ECF" id="0RG-BD-bq1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mib-MC-8Qu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2043" y="1196"/>
+            <point key="canvasLocation" x="-2043.75" y="1195.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -282,7 +882,11 @@
             <point key="canvasLocation" x="2.25" y="379.5"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="3hM-fH-fBW"/>
-    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="baiterek.jpg" width="750" height="1334"/>
+        <image name="image012.jpg" width="1000" height="667"/>
+        <image name="parkImage.jpg" width="750" height="1334"/>
+        <image name="tasImage.jpg" width="750" height="1334"/>
+        <image name="urtaImage.jpg" width="750" height="1334"/>
+    </resources>
 </document>

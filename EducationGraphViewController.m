@@ -10,6 +10,8 @@
 
 @interface EducationGraphViewController (){
     BarChartView *barChartView;
+    PieChartView *pieChart;
+    BOOL ok;
 }
 
 @end
@@ -27,35 +29,49 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    UISwipeGestureRecognizer * swipeleft = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeleft:)];
+    swipeleft.direction=UISwipeGestureRecognizerDirectionLeft;
+    [self.view addGestureRecognizer:swipeleft];
+
+    ok = false;
+
     self.view.backgroundColor = [UIColor whiteColor];
 
     NSUserDefaults *userDef = [NSUserDefaults standardUserDefaults];
-    NSInteger which = [[userDef valueForKey:@"eduGraphShow"] integerValue];
+    NSInteger which = [[userDef valueForKey:@"graphShow"] integerValue];
+    NSString *urlString = (NSString *)[userDef valueForKey:@"api"];
+    [userDef synchronize];
 
     NSLog(@"%ld", (long)which);
 
-    if(which == 1){
-        NSString *urlString = @"http://data.egov.kz/api/v2/internet_users";
+    NSLog(@"%@", urlString);
 
-        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlString]];
 
-        if (!data) {
-            NSLog(@"not working");
-        }
-        else {
+    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlString]];
 
-            NSMutableArray *jsonArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:NULL];
+    if (!data) {
+        NSLog(@"not working");
+    }
+    else {
 
-            NSMutableArray *arrayX = [[NSMutableArray alloc] init];
-            NSMutableArray *arrayY = [[NSMutableArray alloc] init];
+        NSMutableArray *jsonArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:NULL];
 
-            int ind = 0;
+        NSMutableArray *arrayX = [[NSMutableArray alloc] init];
+        NSMutableArray *arrayY = [[NSMutableArray alloc] init];
 
-            NSLog(@"%@", jsonArray.firstObject);
+        int ind = 0;
 
-            for(int indY = 2006; indY<=2010; indY++){
-                NSString *key = [NSString stringWithFormat:@"y%d", indY];
-                int y = [jsonArray.firstObject[key] intValue];
+        NSLog(@"%@", jsonArray.lastObject);
+
+        for(int indY = 2000; indY<=2015; indY++){
+
+            NSString *key = [NSString stringWithFormat:@"y%d", indY];
+            NSString *val = (NSString *)jsonArray.lastObject[key];
+            
+
+            if([[jsonArray.lastObject allKeys] containsObject:key] && jsonArray.lastObject[key] != [NSNull null]){
+
+                int y = [val intValue];
 
                 BarChartDataEntry *dataEntry = [[BarChartDataEntry alloc] initWithValue:(double)y xIndex:ind];
                 ind++;
@@ -67,36 +83,67 @@
 
                 NSLog(@"%@, %d", key, y);
             }
-
-            NSString *strin = (NSString *)jsonArray.firstObject[@"nameRu"];
-            NSLog(@"%@", strin);
-
-            barChartView = [[BarChartView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-            barChartView.noDataText = @"Not Data";
-            barChartView.xAxis.labelPosition = XAxisLabelPositionBottom;
-            barChartView.xAxis.labelHeight = 10.0;
-            [barChartView.animator animateWithXAxisDuration:2.0 yAxisDuration:2.0 easingOption:ChartEasingOptionEaseInBounce];
-
-            BarChartDataSet *dataSet = [[BarChartDataSet alloc] initWithYVals:arrayY label:@"hello"];
-            dataSet.colors = [ChartColorTemplates colorful];
-            
-            BarChartData *barData = [[BarChartData alloc] initWithXVals:arrayX dataSet:dataSet];
-            
-            barChartView.data = barData;
-            
-            [self.view addSubview:barChartView];
         }
 
-        [self performSelector:@selector(saveToCameraBar) withObject:Nil afterDelay:3.0f];
+        NSString *strin = (NSString *)jsonArray.lastObject[@"nameRu"];
+        NSLog(@"%@", strin);
+
+        barChartView = [[BarChartView alloc] initWithFrame:CGRectMake(0, 20, self.view.frame.size.width, self.view.frame.size.height-100)];
+        barChartView.noDataText = @"Not Data";
+        barChartView.xAxis.labelPosition = XAxisLabelPositionBottom;
+        barChartView.xAxis.labelHeight = 10.0;
+        [barChartView.animator animateWithXAxisDuration:2.0 yAxisDuration:2.0 easingOption:ChartEasingOptionEaseInBounce];
+
+        BarChartDataSet *dataSet = [[BarChartDataSet alloc] initWithYVals:arrayY label:strin];
+        dataSet.colors = [ChartColorTemplates colorful];
+        
+        BarChartData *barData = [[BarChartData alloc] initWithXVals:arrayX dataSet:dataSet];
+        
+        barChartView.data = barData;
+        
+        [self.view addSubview:barChartView];
+
+
+        pieChart = [[PieChartView alloc] initWithFrame:barChartView.frame];
+        pieChart.centerText = strin;
+        PieChartDataSet *pieDataSet = [[PieChartDataSet alloc] initWithYVals:arrayY label:strin];
+        pieDataSet.colors = [ChartColorTemplates colorful];
+        PieChartData *pieData = [[PieChartData alloc] initWithXVals:arrayX dataSet:pieDataSet];
+        pieChart.data = pieData;
+        //[self.view addSubview:pieChart];
+    }
+
+    //[self performSelector:@selector(saveToCameraBar) withObject:Nil afterDelay:3.0f];
+}
+
+-(void)swipeleft:(UISwipeGestureRecognizer*)gestureRecognizer
+{
+    if(!ok){
+        ok = true;
+        [barChartView removeFromSuperview];
+        [self.view addSubview:pieChart];
+    }
+    else{
+        ok = false;
+        [pieChart removeFromSuperview];
+        [self.view addSubview:barChartView];
     }
 }
 
-- (void)saveToCameraBar{
+- (IBAction)saveSnapshot:(id)sender {
     [barChartView saveToCameraRoll];
+}
+
+- (void)saveToCameraBar{
+    if(!ok)
+       [barChartView saveToCameraRoll];
+    else
+        [pieChart saveToCameraRoll];
 }
 
 
 #pragma mark - Other
 - (void)dealloc {
 }
+
 @end

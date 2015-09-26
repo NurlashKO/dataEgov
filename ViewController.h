@@ -9,7 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <Charts/Charts.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController{
+    BOOL ok;
+    BarChartView *barChartView;
+    PieChartView *pieChart;
+}
 
 
 @end

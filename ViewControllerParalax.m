@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.parallaxCollectionView.backgroundColor = [UIColor greenColor];
+    self.parallaxCollectionView.backgroundColor = [UIColor blackColor];
 
     NSUInteger index;
     for (index = 0; index < 5; ++index) {
